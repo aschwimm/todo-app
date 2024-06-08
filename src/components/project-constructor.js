@@ -1,7 +1,7 @@
 function createProject(title) {
-    const todoList = [];
+    const todoList = {};
     const addTodo = (todo) => {
-        todoList.push(todo);
+        todoList[todo.title] = todo;
     }
     return { title, addTodo , todoList}
 }
