@@ -1,5 +1,8 @@
 function createForm() {
     const form = document.createElement("form");
+    const submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.innerHTML = "Submit";
     
     const createInput = (type, name, id, label) => {
         const input = document.createElement("input");
@@ -22,7 +25,8 @@ function createForm() {
         titleLabel,
         title,
         descriptionLabel,
-        description
+        description,
+        submitButton
     );
 
     return form;
