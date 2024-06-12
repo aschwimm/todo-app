@@ -5,5 +5,11 @@ function createProject(title) {
     }
     return { title, addTodo , todoList}
 }
-
-export { createProject }
+function createProjectList() {
+    const projects = [];
+    const addProject = (project) => {
+        projects.push(project);
+    }
+    return { projects, addProject };
+}
+export { createProject, createProjectList }
