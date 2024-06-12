@@ -1,4 +1,3 @@
-import { createTodo } from "./components/todo-constructor.js";
 import { createProject } from "./components/project-constructor.js";
 import { setPriority } from "./components/set-priority.js";
 import { setCompleteStatus } from "./components/set-complete.js";
