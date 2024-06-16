@@ -14,7 +14,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     const todo = formToTodo(form);
     newProject.addTodo(todo);
-    console.log(newProject);
+    form.reset();
     console.log(projects);
 })
 content.appendChild(form);
