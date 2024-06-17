@@ -4,6 +4,7 @@ import { setCompleteStatus } from "./components/set-complete.js";
 import { createForm } from "./components/form-creation.js";
 import { formToTodo } from "./components/todo-from-form.js";
 import { createProjectList } from "./components/project-constructor.js";
+import { selectConstructor } from "./components/project-selector.js";
 
 const projects = createProjectList();
 const newProject = createProject("default");
@@ -18,4 +19,4 @@ form.addEventListener("submit", (event) => {
     console.log(projects);
 })
 content.appendChild(form);
-
+selectConstructor(form, projects.projects);
