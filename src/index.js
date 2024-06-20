@@ -16,6 +16,9 @@ const projectForm = newProjectForm();
 selectConstructor(todoForm.projects, projects);
 todoForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    const projectIndex = todoForm.projects.value;
+    const todo = formToTodo(todoForm);
+    projects.projects[projectIndex].addTodo(todo);
     todoForm.reset();
 })
 projectForm.addEventListener("submit", (event) => {
