@@ -1,19 +1,13 @@
-function selectConstructor(form, projects) {
-    const label = document.createElement("label");
-    label.for = "projects";
-    label.innerHTML = "Projects";
-    const select = document.createElement("select");
-    select.name = "projects";
-    for(const project of projects) {
+function selectConstructor(element, projects) {
+    element.innerHTML = "";
+    const projectsArray = projects.projects;
+    for(const project in projectsArray) {
         const option = document.createElement("option");
         option.value = project;
-        option.innerHTML = project["title"]
-        select.append(option);
+        option.innerHTML = projectsArray[project].title;
+        element.append(option);
     }
-
-    form.append(
-        label,
-        select
-    )
+    console.log(projectsArray);
+    console.log(element);
 }
 export { selectConstructor }

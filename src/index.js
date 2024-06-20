@@ -5,18 +5,26 @@ import { createForm } from "./components/form-creation.js";
 import { formToTodo } from "./components/todo-from-form.js";
 import { createProjectList } from "./components/project-constructor.js";
 import { selectConstructor } from "./components/project-selector.js";
+import { newProjectForm } from "./components/create-project-form.js";
 
 const projects = createProjectList();
 const newProject = createProject("default");
 projects.addProject(newProject);
 const content = document.getElementById("content");
-const form = createForm();
-form.addEventListener("submit", (event) => {
+const todoForm = createForm();
+const projectForm = newProjectForm();
+selectConstructor(todoForm.projects, projects);
+todoForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const todo = formToTodo(form);
-    newProject.addTodo(todo);
-    form.reset();
-    console.log(projects);
+    todoForm.reset();
 })
-content.appendChild(form);
-selectConstructor(form, projects.projects);
+projectForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = projectForm.newProject.value;
+    const newProject = createProject(name);
+    projects.addProject(newProject);
+    selectConstructor(todoForm.projects, projects);
+    projectForm.reset();
+})
+content.append(todoForm);
+content.append(projectForm);
