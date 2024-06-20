@@ -7,7 +7,5 @@ function selectConstructor(element, projects) {
         option.innerHTML = projectsArray[project].title;
         element.append(option);
     }
-    console.log(projectsArray);
-    console.log(element);
 }
 export { selectConstructor }
