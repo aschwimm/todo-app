@@ -1,5 +1,8 @@
 function todoForm() {
     const form = document.createElement("form");
+    const submit = document.createElement("button");
+    submit.type = "submit";
+    submit.innerHTML = "+ Add";
     const capitalizeLabel = label => label.charAt(0).toUpperCase() + label.slice(1);
     const formConstructor = (name, type) => {
         const input = document.createElement("input");
@@ -22,7 +25,8 @@ function todoForm() {
         descriptionLabel,
         description,
         dateLabel,
-        date
+        date,
+        submit
     )
     return form;
 }
