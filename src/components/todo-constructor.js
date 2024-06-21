@@ -1,8 +1,8 @@
 function createTodo(form) {
-    const priority = form.priority;
-    const title = form.title;
-    const description = form.description;
-    const date = form.date;
+    const priority = form.priority.value;
+    const title = form.title.value;
+    const description = form.description.value;
+    const date = form.date.value;
     const completion = false;
     const todo = {
         priority,
