@@ -1,13 +1,22 @@
 function createTodoElement(projects) {
     const todoContainer = document.createElement("div");
     projects.todos.forEach((todo, index) => {
-        const todoWrapper = document.createElement("div");
+        const editButton = document.createElement("button");
+        editButton.innerHTML = "Edit";
+        editButton.id = index;
+        const completeButton = document.createElement("button");
+        completeButton.innerHTML = "Complete";
+        completeButton.id = index;
         Object.entries(todo).forEach(([key, value]) => {
             const todoItem = document.createElement("ul");
-            todoWrapper.id = index;
+            
             todoItem.innerHTML = `${key}: ${value}`;
-            todoWrapper.append(todoItem);
-            todoContainer.append(todoWrapper);
+            
+            todoContainer.append(
+                todoItem, 
+                completeButton, 
+                editButton
+            );
         });
     });
     return todoContainer;
